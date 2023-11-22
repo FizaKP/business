@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>SereniTea Corner</title>
+</head>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black; /* Changed to black background */
+    color: rgb(228, 106, 106);
+    text-align: center;
+    padding: 2em;
+    position: relative;
+}
+
+header, nav, section, footer {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(133, 127, 127, 0.1);
+    margin: 20px 0; /* Added margin for spacing between sections */
+}
+
+header {
+    background-color: black; /* Changed to black background */
+    color: rgb(228, 106, 106);
+    text-align: center;
+    padding: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    padding: 10em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.menu-item {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.menu-item img {
+    max-width: 150px;
+    margin-right: 1em;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+#order {
+    margin-bottom: 20px; /* Added margin at the bottom of the order section */
+}
+
+footer {
+    background-color: #5e5858;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+</style>
+
+<body>
+    <div class="hero"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="cup.jpeg" class="logo" alt="SereniTea Logo" style="height: 30px; margin-right: 10px;" width="30" height="5">
+                SereniTea Corner
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#order">Order Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" style="text-align: center;">
+        <video autoplay muted loop style="width: 100%;">
+            <source src="coffee.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Welcome to a World of Flavor</h1>
+        <p>Indulge in the finest teas and delectable snacks crafted just for you.</p>
+    </section>
+
+    <section id="menu" style="text-align: center; margin-top: 20px;">
+        <h2>Our Menu</h2>
+        <div class="menu-item">
+            <img src="greentea.jpeg" alt="Green Tea" style="width: 100%;">
+            <div class="item-details">
+                <h3>Green Tea</h3>
+                <p>Healthy and refreshing, a perfect way to start your day.</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="masalatea.jpeg" alt="Masala Chai" style="width: 100%;">
+            <div class="item-details">
+                <h3>Masala Chai</h3>
+                <p>Experience the rich and spiced flavors of authentic Indian chai.</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="buscuits.webp" alt="Biscuits" style="width: 100%;">
+            <div class="item-details">
+                <h3>Biscuits</h3>
+                <p>Crunchy and delightful, the perfect companion to your tea.</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="scones.jpeg" alt="Scones" style="width: 100%;">
+            <div class="item-details">
+                <h3>Scones</h3>
+                <p>Sweet or savory, savor the goodness of freshly baked scones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" style="text-align: center; margin-top: 20px;">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="item">Select Item:</label>
+            <select id="item" name="item" required>
+                <option value="greenTea">Green Tea</option>
+                <option value="masalaChai">Masala Chai</option>
+                <option value="biscuits">Biscuits</option>
+                <option value="scones">Scones</option>
+            </select>
+
+            <button type="button" onclick="submitOrder()">Place Order</button>
+        </form>
+    </section>
+
+    <section id="about" style="text-align: center; margin-top: 20px;">
+        <h2>About Us</h2>
+        <p>At Tea & Snacks Delight, we are passionate about creating a delightful experience for tea enthusiasts and snack
+            lovers. Our handpicked selection of teas and artisanal snacks is crafted to perfection, ensuring every moment
+            with us is a moment of pure indulgence.</p>
+    </section>
+
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>&copy; 2023 Tea & Snacks Delight. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
